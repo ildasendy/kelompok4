@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bernyanyi Lagu Populer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-gray-100">
+    <nav
+      class="navbar bg-gradient-to-r from-purple-600 to-blue-500 p-6 text-white flex justify-between items-center shadow-lg relative"
+    >
+      <h1 class="text-2xl font-bold">Bernyanyi Lagu Populer</h1>
+
+      <!-- Tombol Menu (Hamburger) -->
+      <button
+        id="menu-toggle"
+        class="lg:hidden block text-white text-3xl focus:outline-none z-50"
+      >
+        ☰
+      </button>
+
+      <!-- Daftar Menu -->
+      <ul
+        id="menu"
+        class="hidden lg:flex gap-8 text-lg absolute lg:static top-full right-0 bg-gradient-to-r from-purple-600 to-blue-500 w-full lg:w-auto flex-col lg:flex-row items-start lg:items-center shadow-lg p-4 lg:p-0 transition-all duration-300 z-40"
+      >
+        <li>
+          <a href="#pendahuluan" class="hover:text-yellow-300 block py-2 px-4"
+            >Pendahuluan</a
+          >
+        </li>
+        <li>
+          <a href="#materi" class="hover:text-yellow-300 block py-2 px-4"
+            >Materi Pembelajaran</a
+          >
+        </li>
+        <li>
+          <a href="#quiz" class="hover:text-yellow-300 block py-2 px-4"
+            >Kuis Interaktif</a
+          >
+        </li>
+        </ul>
+    </nav>
+
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          let menu = document.getElementById("menu");
+          if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+          } else {
+            menu.classList.add("hidden");
+          }
+        });
+    </script>
+
+    <section
+      id="pendahuluan"
+      class="flex justify-center items-center h-screen bg-gradient-to-r from-pink-500 to-yellow-500 text-white text-center p-6"
+    >
+      <div class="max-w-lg w-full">
+        <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+          Selamat Datang di Website Kami
+        </h2>
+        <p class="text-base sm:text-lg mb-6">
+          Website ini berisi materi pembelajaran tentang bernyanyi lagu populer.
+        </p>
+        <img
+          src="assets/image/bernyanyi.jpeg"
+          alt="Ilustrasi Bernyanyi"
+          class="mt-5 w-[95%] md:w-[85%] lg:w-[80%] xl:w-[75%] max-w-[1000px] h-auto mx-auto rounded-lg shadow-md mb-12"
+        />
+        <a
+          href="#materi"
+          class="bg-white text-purple-600 px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-gray-300 transition-all block mx-auto w-32"
+        >
+          Mulai
+        </a>
+      </div>
+    </section>
+
+    <section id="materi" class="p-8 bg-white shadow-lg rounded-lg my-6 fade-in">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">
+        Materi Pembelajaran
+      </h2>
+
+      <!-- Tujuan Pembelajaran -->
+      <div class="mb-6 fade-in">
+        <h3 class="text-2xl font-semibold text-gray-800">
+          Tujuan Pembelajaran
+        </h3>
+        <ul class="list-disc pl-6 text-lg text-gray-700 mt-2">
+          <li>Mendeskripsikan jenis lagu populer</li>
+          <li>Mendeskripsikan gaya bernyanyi lagu populer</li>
+          <li>
+            Mendeskripsikan tahapan latihan bernyanyi lagu populer dengan gaya
+            yang tepat
+          </li>
+          <li>Menyanyikan lagu populer dengan gaya yang tepat</li>
+        </ul>
+      </div>
+
+      <!-- Jenis Lagu Populer -->
+      <h3 class="text-2xl font-semibold text-gray-800 mt-6 fade-in">
+        Jenis Lagu Populer
+      </h3>
+      <p class="text-lg text-gray-700 text-justify mb-6 fade-in">
+        Gaya bernyanyi adalah cara yang menjadi ciri khas seseorang dalam
+        membawakan lagu sesuai dengan jenis lagunya. Perkembangan lagu
+        dipengaruhi oleh perkembangan alat musik dan teknologi, menjadikannya
+        lebih populer.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Lagu Pop -->
+        <div
+          class="p-6 bg-blue-100 rounded-lg shadow-lg fade-in hover:scale-105 transition-transform"
+        >
+          <h3 class="text-xl font-semibold text-blue-700">Lagu Pop</h3>
+          <p class="text-gray-700">
+            Lagu bertema kehidupan sehari-hari yang mudah dipahami.
+          </p>
+          <video
+            controls
+            poster="assets/image/tiara kupu-kupu.jpg"
+            controls
+            class="mt-2 w-full rounded-lg shadow-lg"
+          >
+            <source src="assets/clip media/kupu-kupu.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <!-- Lagu Jazz -->
+        <div
+          class="p-6 bg-yellow-100 rounded-lg shadow-lg fade-in hover:scale-105 transition-transform"
+        >
+          <h3 class="text-xl font-semibold text-yellow-700">Lagu Jazz</h3>
+          <p class="text-gray-700">Musik dengan akor khas 7,9,11, atau 13.</p>
+          <video
+            controls
+            poster="assets/image/hati di jalan mv.png"
+            controls
+            class="mt-2 w-full rounded-lg shadow-lg"
+          >
+            <source
+              src="assets/clip media/TULUS - Hati-Hati di Jalan (Official Music Video).mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <!-- Lagu Rock -->
+      <div class="p-6 bg-red-100 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold text-red-700">Lagu Rock</h3>
+      <p class="text-gray-700">Identik dengan suara kencang dan efek gitar menggelegar.</p>
+      <video controls
+        poster="assets/image/arjuna dewa 19.webp"controls class="mt-2 w-full rounded-lg shadow-lg">
+      <source src="assets/clip media/arjuna.mp4" type="video/mp4" />
+      </video>
+      </div>
+
+  <!-- Lagu Dangdut -->
+  <div class="p-6 bg-green-100 rounded-lg shadow-lg">
+    <h3 class="text-xl font-semibold text-green-700">Lagu Dangdut</h3>
+    <p class="text-gray-700">Musik khas Indonesia dengan kendang yang khas.</p>
+    <video controls
+            poster="assets/image/sambalado att.jpg" controls class="mt-2 w-full rounded-lg shadow-lg">
+      <source src="assets/clip media/sambalado.mp4" type="video/mp4" />
+    </video>
+  </div>
+  </div>
+
+  <!-- Tombol dengan animasi -->
+  <div class="flex justify-center mt-6">
+  <a href="#quiz" 
+     class="bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg 
+            transition-all duration-300 ease-in-out transform hover:bg-purple-700 
+            hover:scale-110 hover:shadow-2xl hover:-translate-y-1 animate-pulse">
+    Latihan Yuk
+  </a>
+  </div>
+  </div>
+    </section>
+
+    <section id="quiz" class="p-8 text-center fade-in">
+      <h2 class="text-2xl font-bold mb-4">Kuis Interaktif</h2>
+
+      <!-- Tombol untuk mulai kuis -->
+      <button
+        onclick="startQuiz()"
+        id="start-quiz-btn"
+        class="mt-4 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+      >
+        Mulai Kuis
+      </button>
+
+      <!-- Kontainer Kuis -->
+      <div
+        id="quiz-container"
+        class="mt-6 hidden max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg"
+      >
+        <h3 id="question" class="text-lg font-semibold mb-4"></h3>
+        <div id="answers" class="grid grid-cols-2 gap-4"></div>
+        <button
+          onclick="nextQuestion()"
+          id="next-btn"
+          class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition hidden"
+        >
+          Selanjutnya
+        </button>
+      </div>
+
+      <!-- Skor Akhir -->
+      <div id="score-container" class="mt-6 hidden text-center">
+        <h3 class="text-xl font-bold">Skor Akhir</h3>
+        <p id="final-score" class="text-lg"></p>
+        <button
+          onclick="restartQuiz()"
+          class="mt-4 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition"
+        >
+          Coba Lagi
+        </button>
+      </div>
+    </section>
+
+    <!-- Tombol untuk menampilkan Developer Section -->
+<div class="flex justify-center mt-8">
+  <button id="toggleDeveloper"
+    class="w-full max-w-[90%] bg-gradient-to-r from-blue-600 to-green-500 text-white px-10 py-8 rounded-lg text-2xl font-bold shadow-xl 
+           transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+    Lihat Developer
+  </button>
+</div>
+
+<!-- Developer Section -->
+<section id="developer" class="w-full max-w-[90%] bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-12 rounded-xl shadow-2xl mx-auto opacity-0 transform translate-y-5 transition-all duration-500 ease-in-out hidden">
+  <h2 class="text-3xl font-bold text-center mb-6">Developer</h2>
+  <p class="text-lg text-center">Website ini dikembangkan oleh:</p>
+  <ul class="list-none text-lg text-left my-4">
+    <li>Nur IfanSyah - NIM 2305176006</li>
+    <li>Alvfa Mido Ong - NIM 2305176028</li>
+    <li>Chusnul Khatimah - NIM 2305176034</li>
+    <li>Ilda Sendy Aulya Putri - NIM 2305176041</li>
+  </ul>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+    <div class="w-60 h-72 rounded-lg shadow-xl border-4 border-white overflow-hidden">
+      <img src="assets/image/ifan.jpeg" alt="Nur IfanSyah" class="w-full h-full object-cover">
+    </div>
+    <div class="w-60 h-72 rounded-lg shadow-xl border-4 border-white overflow-hidden">
+      <img src="assets/image/mido.jpeg" alt="Alvfa Mido Ong" class="w-full h-full object-cover">
+    </div>
+    <div class="w-60 h-72 rounded-lg shadow-xl border-4 border-white overflow-hidden">
+      <img src="assets/image/ima.jpeg" alt="Chusnul Khatimah" class="w-full h-full object-cover">
+    </div>
+    <div class="w-60 h-72 rounded-lg shadow-xl border-4 border-white overflow-hidden">
+      <img src="assets/image/aya.jpeg" alt="Ilda Sendy Aulya Putri" class="w-full h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript untuk Toggle Section -->
+<script>
+  document.getElementById("toggleDeveloper").addEventListener("click", function() {
+    const button = document.getElementById("toggleDeveloper");
+    const section = document.getElementById("developer");
+
+    // Hilangkan tombol dengan animasi mengecil
+    button.classList.add("opacity-0", "scale-75", "pointer-events-none");
+    setTimeout(() => button.classList.add("hidden"), 300); // Hilangkan dari tampilan
+
+    // Tampilkan Developer Section dengan animasi fade-in
+    setTimeout(() => {
+      section.classList.remove("hidden", "opacity-0", "translate-y-5");
+    }, 300);
+  });
+</script>
+
+    <script src="js/materi.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        fadeElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+      }
+
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+     
+  </body>
+</html>

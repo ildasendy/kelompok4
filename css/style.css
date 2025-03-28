@@ -1,0 +1,415 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+nav {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek shadow pada navbar saat scroll */
+.navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrolled {
+  background: rgba(63, 81, 181, 0.9) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efek animasi fade-in untuk section */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tombol indikator progress scroll */
+#scroll-indicator {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  background: gray;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
+
+.scroll-dot.active {
+  background: #4caf50;
+}
+
+nav h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav ul li a {
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ffeb3b;
+  transform: scale(1.1);
+}
+
+/* Section Styling */
+section {
+  padding: 50px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#pendahuluan {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  text-align: center;
+}
+
+/* Styling untuk Materi */
+#materi {
+  background: #ffe8c2 !important;
+  max-width: 1220px !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#materi {
+  border: 3px solid red !important; /* Tambahkan garis merah agar terlihat */
+}
+
+/* Pastikan semua kotak memiliki ukuran yang sama */
+.container-box,
+.materi-container {
+  background: #ffe5b4; /* Warna sesuai */
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading dalam Materi */
+#materi h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* List Styling */
+#materi ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Styling Video */
+#materi video {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animasi Slide */
+.materi-slide {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.materi-slide.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tombol Navigasi */
+#prev-btn,
+#next-btn {
+  background: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  border: none;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+/* Styling Video Container */
+.video-container {
+  display: none;
+  margin-top: 20px;
+}
+
+.video-container.active {
+  display: block;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  #materi {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .container-box,
+  .materi-container {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+
+  #materi h2 {
+    font-size: 1.5rem;
+  }
+
+  #prev-btn,
+  #next-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Styling untuk Kuis */
+#quiz {
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk Pertanyaan */
+#quiz-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Styling untuk Opsi Jawaban */
+#answers button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#answers button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Efek warna saat jawaban benar atau salah */
+.correct {
+  background: #4caf50 !important;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 255, 0, 0.6);
+}
+
+.wrong {
+  background: #e74c3c !important;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(255, 0, 0, 0.6);
+}
+
+/* Styling untuk tombol Next dan Restart */
+#next-btn,
+#restart-btn {
+  background: #3498db;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+#next-btn:hover,
+#restart-btn:hover {
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#developer {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Video Styling */
+video {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Styling */
+img {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* List Styling */
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 30px;
+    max-width: 95%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+/* Foto Developer Berbentuk Oval */
+#developer .developer-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  flex-wrap: wrap; /* Biarkan tetap wrap */
+}
+
+#developer .developer-container img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Perbaikan agar foto tersusun ke bawah di layar kecil */
+@media (max-width: 768px) {
+  #developer .developer-container {
+    flex-direction: column; /* Susun ke bawah */
+    align-items: center; /* Pusatkan foto */
+  }
+
+  #developer .developer-container img {
+    width: 110px; /* Sedikit lebih kecil */
+    height: 110px;
+    margin-bottom: 10px; /* Beri jarak antar foto */
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
